@@ -1,7 +1,7 @@
 function scrollL() {
-    document.querySelector('.wrapper').scrollLeft -= 930;
+    document.querySelector('.wrapper').scrollLeft -= 948;
 }
 
 function scrollRight() {
-    document.querySelector('.wrapper').scrollLeft += 930;
+    document.querySelector('.wrapper').scrollLeft += 948;
 }

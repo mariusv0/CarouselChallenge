@@ -25,13 +25,12 @@ ul {
 	display: flex;
 	flex-direction: row;
 	overflow: hidden;
-	/* padding-left: 8px; */
 }
 
 ul button {
 	padding: 0;
 	border: 0;
-	background-color: grey;
+	background-color: transparent;
 	width: 24px;
 }
 
@@ -61,12 +60,11 @@ ul button#left::after {
 
 li {
 	list-style-type: none;
-	padding: 8px;
 }
 
 li .img {
-	width: 256px;
-	height: 300px;
+	width: 272px;
+	height: 272px;
     background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -87,7 +85,7 @@ li .img3 {
 }
 
 li:last-child {
-	padding-right: 8px;
+	padding-right: 0;
 }
 
 @media (min-width: 700px) {
@@ -96,10 +94,12 @@ li:last-child {
 		max-width: 980px;
 	}
 
-	li .img {
-		width: 294px;
-		height: 300px;
+	li {
+		padding-right: 16px;
 	}
 
-
+	li .img {
+		width: 300px;
+		height: 300px;
+	}
 }
