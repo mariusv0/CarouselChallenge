@@ -25,7 +25,9 @@ ul {
 	display: flex;
 	flex-direction: row;
 	overflow: hidden;
+	/* padding-left: 8px; */
 }
+
 
 .wrapper img {
 	padding: 8px;
@@ -35,6 +37,7 @@ ul button {
 	padding: 0;
 	border: 0;
 	background-color: transparent;
+	width: 12px;
 }
 
 ul button#right::after {
@@ -59,10 +62,12 @@ ul button#left::after {
 	cursor: pointer;
 }
 
-
-
 li {
 	list-style-type: none;
+}
+
+li:last-child {
+	padding-right: 8px;
 }
 
 @media (min-width: 700px) {
