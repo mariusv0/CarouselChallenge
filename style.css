@@ -63,8 +63,8 @@ li {
 }
 
 li .img {
-	width: 300px;
-    height: 300px;
+	width: 296px;
+	height: 300px;
     background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -92,5 +92,10 @@ li:last-child {
 	#app {
 		width: 100%;
 		max-width: 980px;
+	}
+
+	li .img {
+		width: 300px;
+		height: 300px;
 	}
 }
