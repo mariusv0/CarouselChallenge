@@ -1,0 +1,28 @@
+html, body {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#app {
+	background-color: #f5f5f5;
+	height: 100%;
+	width: 320px;
+	margin: 0 auto;
+}
+#app:after {
+	content: "Mobile - width: 320px";
+	position: absolute;
+	bottom: 0;
+	padding: 8px;
+}
+
+@media (min-width: 700px) {
+	#app {
+		width: 100%;
+		max-width: 980px;
+	}
+	#app:after {
+		content: "Desktop - max-width: 980px";
+	}
+}
