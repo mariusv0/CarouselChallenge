@@ -2,23 +2,30 @@
 //Slider
 var wrapper = document.querySelector('.wrapper');
 
-if (window.innerWidth < 700) {
     function scrollL() {
-        wrapper.scrollLeft -= 272;
+        var scrollLength = wrapper.clientWidth + 16;
+        wrapper.scrollLeft -= scrollLength;
     }
     
     function scrollRight() {
-        wrapper.scrollLeft += 272;
+        var scrollLength = wrapper.clientWidth + 16;
+        wrapper.scrollLeft += scrollLength;
     }
-  } else {
-    function scrollL() {
-        wrapper.scrollLeft -= 948;
+
+var resizeTimeout;
+
+window.addEventListener("resize", function(e) {
+    if (resizeTimeout !== null) {
+        clearTimeout(resizeTimeout);
     }
-    
-    function scrollRight() {
-        wrapper.scrollLeft += 948;
-    }
-  }
+
+    resizeTimeout = setTimeout(function() {
+        resizeTimeout = null;
+        console.log(e);
+        wrapper.scrollLeft = 0;
+    }, 500);
+});
+
 
 //Navngiv Billede
   var billeder = document.querySelectorAll('.img');
