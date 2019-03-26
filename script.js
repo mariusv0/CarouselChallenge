@@ -17,6 +17,25 @@ var wrapper = document.querySelector('.wrapper');
         wrapper.scrollLeft += scrollLength;
     }
 
+//Navngiv Billede
+var billeder = document.querySelectorAll('.img');
+for (var i = 0; i < billeder.length; i++) {
+  billeder[i].addEventListener("click", navngivBillede);
+}
+
+function navngivBillede(e) {
+  if (!e.target) return;
+
+  var txt;
+  var navn = prompt("Navngiv billedet:", "");
+  if (navn == null || navn == "") {
+    txt = "Du annulerede";
+  } else {
+    txt = navn;
+  }
+  e.target.parentNode.querySelector("li h3").innerHTML = txt;
+}
+
 var resizeTimeout;
 
 window.addEventListener("resize", function(e) {
@@ -31,29 +50,43 @@ window.addEventListener("resize", function(e) {
     }, 500);
 });
 
+var addImgBtn = document.getElementById("addImgBtn")
+addImgBtn.addEventListener("click", addImg)
 
-//Navngiv Billede
-  var billeder = document.querySelectorAll('.img');
-  for (var i = 0; i < billeder.length; i++) {
-    billeder[i].addEventListener("click", navngivBillede);
+function addImg() {
+
+    var imgUrl = prompt("Skriv linket til billedet:", "www.google.com");
+
+    var imgNode = document.createElement("img");
+    imgNode.setAttribute("src", "")
+    imgNode.dataset.src = imgUrl;
+    imgNode.classList.add("img", "lazy")
+
+    var countNode = document.createElement("h3");
+    var newNumber = document.querySelectorAll('.img').length + 1;
+    console.log(document.querySelectorAll('.img').length)
+    var countText = document.createTextNode(newNumber);
+    countNode.appendChild(countText);
+
+    var subNode = document.createElement("h4");
+    var subText = document.createTextNode("Klik på billedet for at ændre navnet");
+    subNode.appendChild(subText);
+
+    var liNode = document.createElement("li");
+
+    liNode.appendChild(imgNode);
+    liNode.appendChild(countNode);
+    liNode.appendChild(subNode);
+    document.querySelector(".wrapper").appendChild(liNode);
+
+    lazyLoading(document.querySelector(".wrapper"))
   }
 
-  function navngivBillede(e) {
-    if (!e.target) return;
-
-    var txt;
-    var navn = prompt("Navngiv billedet:", "");
-    if (navn == null || navn == "") {
-      txt = "Du annulerede";
-    } else {
-      txt = navn;
-    }
-    e.target.parentNode.querySelector("li h3").innerHTML = txt;
-  }
-
+lazyLoading(document)
 
 //LazyLoad
-var lazyBackgrounds = [].slice.call(document.querySelectorAll(".lazy"));
+function lazyLoading(view){
+    var lazyBackgrounds = [].slice.call(view.querySelectorAll(".lazy"));
 
   if ("IntersectionObserver" in window) {
     var lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
@@ -73,3 +106,4 @@ var lazyBackgrounds = [].slice.call(document.querySelectorAll(".lazy"));
   } else {
       console.warn("IntersectionObserver not supported")
   }
+}

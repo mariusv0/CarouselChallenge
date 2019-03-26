@@ -45,11 +45,20 @@ ul {
 	overflow: hidden;
 }
 
-ul button {
-	padding: 0;
-	border: 0;
-	background-color: transparent;
+ul .button {
 	width: 24px;
+}
+
+.addImg {
+	border: 2px solid darkgray;
+	background-color: #f5f5f5;
+	color: black;
+	width: 150px;
+	height: 35px;
+	border-radius: 15px;
+	text-align: center;
+	margin:auto;
+	display:block;
 }
 
 ul div#right::after {
@@ -64,18 +73,6 @@ ul div#right::after {
 	margin: 4px;
 }
 
-/* ul button#right::after {
-	content: "";
-	display: block;
-	width: 15px;
-	height: 15px;
-	border-right: 2px solid black;
-	border-bottom: 2px solid black;
-	transform: rotate(-45deg);
-	cursor: pointer;
-	margin: 4px;
-} */
-
 ul div#left::after {
 	content: "";
 	display: block;
@@ -87,7 +84,6 @@ ul div#left::after {
 	cursor: pointer;
 	margin: 5px;
 }
-
 
 li {
 	list-style-type: none;
