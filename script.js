@@ -55,7 +55,9 @@ addImgBtn.addEventListener("click", addImg)
 
 function addImg() {
 
-    var imgUrl = prompt("Skriv linket til billedet:", "www.google.com");
+    var imgUrl = prompt("Skriv linket til billedet:", "");
+    if (!imgUrl) return;
+
 
     var imgNode = document.createElement("img");
     imgNode.setAttribute("src", "")

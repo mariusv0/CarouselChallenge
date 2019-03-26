@@ -37,6 +37,7 @@ ul {
 	flex-direction: row;
 	justify-content: space-evenly;
 	text-align: center;
+	align-items: center;
 }
 
 .wrapper {
@@ -47,6 +48,10 @@ ul {
 
 ul .button {
 	width: 24px;
+	height: 100%;
+	/* display: flex;
+	flex-direction: column;
+	align-items: center; */
 }
 
 .addImg {
@@ -60,6 +65,8 @@ ul .button {
 	margin:auto;
 	display:block;
 }
+
+
 
 ul div#right::after {
 	content: "";
