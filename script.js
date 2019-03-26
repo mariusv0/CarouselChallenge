@@ -1,3 +1,4 @@
+
 //Slider
 var wrapper = document.querySelector('.wrapper');
 
@@ -18,10 +19,19 @@ if (window.innerWidth < 700) {
         wrapper.scrollLeft += 948;
     }
   }
-  var billede = document.querySelector('.img');
-  billede.addEventListener("click", navngivBillede);
 
-  function navngivBillede() {
+//Navngiv Billede
+  var billeder = document.querySelectorAll('.img');
+  console.log(billeder);
+  for (var i = 0; i < billeder.length; i++) {
+    billeder[i].addEventListener("click", navngivBillede);
+  }
+
+  function navngivBillede(e) {
+      console.log(e);
+    if (!e.target) return;
+
+    console.log(e.target.parentNode.querySelector("li h3"))
     var txt;
     var navn = prompt("Navngiv billedet:", "");
     if (navn == null || navn == "") {
@@ -29,7 +39,7 @@ if (window.innerWidth < 700) {
     } else {
       txt = navn;
     }
-    document.querySelector("li h3").innerHTML = txt;
+    e.target.parentNode.querySelector("li h3").innerHTML = txt;
   }
 
 //LazyLoad
