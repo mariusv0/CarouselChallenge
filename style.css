@@ -84,59 +84,6 @@ li .img {
 	background-repeat: no-repeat;
 }
 
-li .img1 {
-	background-image: url("https://via.placeholder.com/300");
-
-}
-
-li .img2 {
-	background-image: url("https://via.placeholder.com/300x600");
-
-}
-li .img3 {
-	background-image: url("https://via.placeholder.com/600x300");
-
-}
-li .img4 {
-	background-image: url("https://via.placeholder.com/300x150");
-
-}
-
-li .img5 {
-	background-image: url("https://via.placeholder.com/300x924");
-
-}
-li .img6 {
-	background-image: url("https://via.placeholder.com/500x300");
-
-}
-li .img7 {
-	background-image: url("https://via.placeholder.com/300x900");
-
-}
-
-li .img8 {
-	background-image: url("https://via.placeholder.com/300x600");
-
-}
-li .img9 {
-	background-image: url("https://via.placeholder.com/600x300");
-
-}
-li .img10 {
-	background-image: url("https://via.placeholder.com/300x482");
-
-}
-
-li .img11 {
-	background-image: url("https://via.placeholder.com/300x1502");
-
-}
-li .img12 {
-	background-image: url("https://via.placeholder.com/600x300");
-
-}
-
 li:last-child {
 	padding-right: 0;
 }
