@@ -39,11 +39,12 @@ if (window.innerWidth < 700) {
     e.target.parentNode.querySelector("li h3").innerHTML = txt;
   }
 
+
 //LazyLoad
 var lazyBackgrounds = [].slice.call(document.querySelectorAll(".lazy"));
 
   if ("IntersectionObserver" in window) {
-    let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
+    var lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
             var lazyImg = entry.target;
@@ -57,4 +58,6 @@ var lazyBackgrounds = [].slice.call(document.querySelectorAll(".lazy"));
     lazyBackgrounds.forEach(function(lazyBackground) {
       lazyBackgroundObserver.observe(lazyBackground);
     });
+  } else {
+      console.warn("IntersectionObserver not supported")
   }
