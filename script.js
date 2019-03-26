@@ -1,4 +1,9 @@
 
+var right = document.getElementById("right")
+var left = document.getElementById("left")
+
+right.addEventListener("click", scrollRight)
+left.addEventListener("click", scrollL)
 //Slider
 var wrapper = document.querySelector('.wrapper');
 

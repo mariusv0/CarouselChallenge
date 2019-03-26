@@ -18,10 +18,15 @@ h1 {
 	padding-top: 20px;
 }
 
-h4 {
-	color: darkgray;
+h3 {
+	color: black;
 	text-align: center;
-	padding-top: 0px;
+	font-size: 25px;
+}
+
+h4 {
+	font-size: 13px;
+	color: darkgray;
 }
 
 ul {
@@ -47,7 +52,7 @@ ul button {
 	width: 24px;
 }
 
-ul button#right::after {
+ul div#right::after {
 	content: "";
 	display: block;
 	width: 15px;
@@ -59,7 +64,19 @@ ul button#right::after {
 	margin: 4px;
 }
 
-ul button#left::after {
+/* ul button#right::after {
+	content: "";
+	display: block;
+	width: 15px;
+	height: 15px;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	transform: rotate(-45deg);
+	cursor: pointer;
+	margin: 4px;
+} */
+
+ul div#left::after {
 	content: "";
 	display: block;
 	width: 15px;
@@ -70,6 +87,7 @@ ul button#left::after {
 	cursor: pointer;
 	margin: 5px;
 }
+
 
 li {
 	list-style-type: none;
