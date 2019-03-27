@@ -31,7 +31,7 @@ function addImg() {
     liNode.appendChild(imgNode);
     liNode.appendChild(countNode);
     liNode.appendChild(subNode);
-    document.querySelector(".wrapper").appendChild(liNode);
+    document.getElementById("list").appendChild(liNode);
 
     lazyLoading(document.querySelector(".wrapper"))
   }

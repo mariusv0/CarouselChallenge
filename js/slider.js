@@ -62,7 +62,6 @@ window.addEventListener("resize", function(e) {
 
     resizeTimeout = setTimeout(function() {
         resizeTimeout = null;
-        console.log(e);
         oldPosition = 0;
         
         // wrapper.scrollLeft = 0;
@@ -71,8 +70,7 @@ window.addEventListener("resize", function(e) {
               'translateX(' + 0 + 'px)',
               'translateX(' + 0 + 'px)'
             ]}, animationTiming);
-        console.log('%O', document.getElementById('list'));
-    }, 500);
+    }, 100);
 
 });
 
