@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Carousel Code Challenge</title>
-    <link rel="stylesheet" href="style.css">
-    <link href='https://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Alegreya Sans"
+      rel="stylesheet"
+    />
     <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
   </head>
 
@@ -15,31 +17,138 @@
       <div class="carousel">
         <div id="left" class="button"></div>
         <div class="wrapper">
-            <ul id="list">
-          <li><img class="img lazy" src="" data-src="https://picsum.photos/200/300/?random" /><h3>1</h3><h4>Klik på billedet for at ændre navnet</h4><div class="deleteBtn">Fjern</div></li>
-          <li><img class="img lazy" src="" data-src="https://picsum.photos/250/?random" /><h3>2</h3><h4>Klik på billedet for at ændre navnet</h4><div class="deleteBtn">Fjern</div></li>
-          <li><img class="img lazy" src="" data-src="https://picsum.photos/646/?random" /><h3>3</h3><h4>Klik på billedet for at ændre navnet</h4><div class="deleteBtn">Fjern</div></li>
-          <li><img class="img lazy" src="" data-src="https://picsum.photos/350/?random" /><h3>4</h3><h4>Klik på billedet for at ændre navnet</h4><div class="deleteBtn">Fjern</div></li>
-          <li><img class="img lazy" src="" data-src="https://picsum.photos/320/?random" /><h3>5</h3><h4>Klik på billedet for at ændre navnet</h4><div class="deleteBtn">Fjern</div></li>
-          <li><img class="img lazy" src="" data-src="https://picsum.photos/390/?random" /><h3>6</h3><h4>Klik på billedet for at ændre navnet</h4><div class="deleteBtn">Fjern</div></li>
-          <li><img class="img lazy" src="" data-src="https://picsum.photos/900/?random" /><h3>7</h3><h4>Klik på billedet for at ændre navnet</h4><div class="deleteBtn">Fjern</div></li>
-          <li><img class="img lazy" src="" data-src="https://picsum.photos/130/?random" /><h3>8</h3><h4>Klik på billedet for at ændre navnet</h4><div class="deleteBtn">Fjern</div></li>
-          <li><img class="img lazy" src="" data-src="https://picsum.photos/920/?random" /><h3>9</h3><h4>Klik på billedet for at ændre navnet</h4><div class="deleteBtn">Fjern</div></li>
-          <li><img class="img lazy" src="" data-src="https://picsum.photos/1080/?random" /><h3>10</h3><h4>Klik på billedet for at ændre navnet</h4><div class="deleteBtn">Fjern</div></li>
-          <li><img class="img lazy" src="" data-src="https://picsum.photos/424/?random" /><h3>11</h3><h4>Klik på billedet for at ændre navnet</h4><div class="deleteBtn">Fjern</div></li>
-          <li><img class="img lazy" src="" data-src="https://picsum.photos/532/?random" /><h3>12</h3><h4>Klik på billedet for at ændre navnet</h4><div class="deleteBtn">Fjern</div></li>
-        </ul>
+          <ul id="list">
+            <li>
+              <img
+                class="img lazy"
+                src=""
+                data-src="https://picsum.photos/200/300/?random"
+              />
+              <h3>1</h3>
+              <h4>Klik på billedet for at ændre navnet</h4>
+              <div class="deleteBtn">Fjern</div>
+            </li>
+            <li>
+              <img
+                class="img lazy"
+                src=""
+                data-src="https://picsum.photos/250/?random"
+              />
+              <h3>2</h3>
+              <h4>Klik på billedet for at ændre navnet</h4>
+              <div class="deleteBtn">Fjern</div>
+            </li>
+            <li>
+              <img
+                class="img lazy"
+                src=""
+                data-src="https://picsum.photos/646/?random"
+              />
+              <h3>3</h3>
+              <h4>Klik på billedet for at ændre navnet</h4>
+              <div class="deleteBtn">Fjern</div>
+            </li>
+            <li>
+              <img
+                class="img lazy"
+                src=""
+                data-src="https://picsum.photos/350/?random"
+              />
+              <h3>4</h3>
+              <h4>Klik på billedet for at ændre navnet</h4>
+              <div class="deleteBtn">Fjern</div>
+            </li>
+            <li>
+              <img
+                class="img lazy"
+                src=""
+                data-src="https://picsum.photos/320/?random"
+              />
+              <h3>5</h3>
+              <h4>Klik på billedet for at ændre navnet</h4>
+              <div class="deleteBtn">Fjern</div>
+            </li>
+            <li>
+              <img
+                class="img lazy"
+                src=""
+                data-src="https://picsum.photos/390/?random"
+              />
+              <h3>6</h3>
+              <h4>Klik på billedet for at ændre navnet</h4>
+              <div class="deleteBtn">Fjern</div>
+            </li>
+            <li>
+              <img
+                class="img lazy"
+                src=""
+                data-src="https://picsum.photos/900/?random"
+              />
+              <h3>7</h3>
+              <h4>Klik på billedet for at ændre navnet</h4>
+              <div class="deleteBtn">Fjern</div>
+            </li>
+            <li>
+              <img
+                class="img lazy"
+                src=""
+                data-src="https://picsum.photos/130/?random"
+              />
+              <h3>8</h3>
+              <h4>Klik på billedet for at ændre navnet</h4>
+              <div class="deleteBtn">Fjern</div>
+            </li>
+            <li>
+              <img
+                class="img lazy"
+                src=""
+                data-src="https://picsum.photos/920/?random"
+              />
+              <h3>9</h3>
+              <h4>Klik på billedet for at ændre navnet</h4>
+              <div class="deleteBtn">Fjern</div>
+            </li>
+            <li>
+              <img
+                class="img lazy"
+                src=""
+                data-src="https://picsum.photos/1080/?random"
+              />
+              <h3>10</h3>
+              <h4>Klik på billedet for at ændre navnet</h4>
+              <div class="deleteBtn">Fjern</div>
+            </li>
+            <li>
+              <img
+                class="img lazy"
+                src=""
+                data-src="https://picsum.photos/424/?random"
+              />
+              <h3>11</h3>
+              <h4>Klik på billedet for at ændre navnet</h4>
+              <div class="deleteBtn">Fjern</div>
+            </li>
+            <li>
+              <img
+                class="img lazy"
+                src=""
+                data-src="https://picsum.photos/532/?random"
+              />
+              <h3>12</h3>
+              <h4>Klik på billedet for at ændre navnet</h4>
+              <div class="deleteBtn">Fjern</div>
+            </li>
+          </ul>
         </div>
         <div id="right" class="button"></div>
-        </div>
+      </div>
       <div class="spacer"></div>
-      <button id="addImgBtn" type="button" class="addImg">Tilføj et billede</button>
+      <button id="addImgBtn" type="button" class="addImg">
+        Tilføj et billede
+      </button>
     </div>
-    <script type="text/javascript" src="js/fjernbillede.js"></script>
     <script type="text/javascript" src="js/slider.js"></script>
     <script type="text/javascript" src="js/lazyload.js"></script>
-    <script type="text/javascript" src="js/tilføjbillede.js"></script>
-    <script type="text/javascript" src="js/navngivning.js"></script>
+    <script type="text/javascript" src="js/billedeHandler.js"></script>
   </body>
-
 </html>
