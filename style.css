@@ -76,7 +76,6 @@ ul {
 .deleteBtn {
 	font-size: 20px;
 	color: red;
-	border: 1px solid red;
 	width: 100%;
 	cursor: pointer;
 }
@@ -112,6 +111,7 @@ div#left::after {
 li {
 	list-style-type: none;
 	font-size: 35px;
+	padding-right: 16px;
 }
 
 li .img {
@@ -121,6 +121,7 @@ li .img {
 	background-position: center;
 	background-repeat: no-repeat;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 li:last-child {
@@ -137,17 +138,11 @@ li:last-child {
 	li {
 		/* width: 100%; */
 		flex: none;
-		width: calc((100% / 3));
-
-	}
-
-	.imgContainer {
-		box-sizing: border-box;
-		padding-right: 16px;
 		width: 100%;
-		height: 300px;
-	}
+		max-width: calc(33.33% - 10px);
+		padding-right: 15px;
 
+	}
 
 	li .img {
 		/* width: calc((100% / 3) + 16px); */
