@@ -1,4 +1,3 @@
-//Navngiv Billede
 var billeder = document.querySelectorAll('.img');
 for (var i = 0; i < billeder.length; i++) {
   billeder[i].addEventListener("click", navngivBillede);
@@ -16,3 +15,5 @@ function navngivBillede(e) {
   }
   e.target.parentNode.querySelector("li h3").innerHTML = txt;
 }
+
+console.log("Navngivning JS loaded")

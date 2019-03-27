@@ -1,4 +1,3 @@
-//LazyLoad
 lazyLoading(document)
 
 function lazyLoading(view){
@@ -23,3 +22,5 @@ function lazyLoading(view){
       console.warn("IntersectionObserver not supported")
   }
 }
+
+console.log("Lazyload JS loaded")

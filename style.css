@@ -64,6 +64,7 @@ ul .button {
 	text-align: center;
 	margin:auto;
 	display:block;
+	cursor: pointer;
 }
 
 .deleteBtn {
@@ -71,6 +72,11 @@ ul .button {
 	color: red;
 	border: 1px solid red;
 	width: 100%;
+	cursor: pointer;
+}
+
+.spacer {
+	height: 20px;
 }
 
 ul div#right::after {
@@ -109,6 +115,7 @@ li .img {
     background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	cursor: pointer;
 }
 
 li:last-child {

@@ -4,7 +4,11 @@ addImgBtn.addEventListener("click", addImg)
 function addImg() {
 
     var imgUrl = prompt("Skriv linket til billedet:", "");
-    if (!imgUrl) return;
+    if (!imgUrl) {
+      alert("Du skrev ikke en URL ind")
+      console.log("Du skrev ikke en URL ind")
+      return;
+    }
 
 
     var imgNode = document.createElement("img");
@@ -31,3 +35,5 @@ function addImg() {
 
     lazyLoading(document.querySelector(".wrapper"))
   }
+
+console.log("Tilføjbillede JS loaded")

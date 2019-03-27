@@ -4,21 +4,34 @@ var left = document.getElementById("left")
 
 right.addEventListener("click", scrollRight)
 left.addEventListener("click", scrollL)
-//Slider
+
 var wrapper = document.querySelector('.wrapper');
+
+var animation = [
+  { transform: 'translateX(20%)' },
+  { transform: 'translateY(0)' } 
+];
+
+var animationTiming = {
+  duration: 250,
+  iterations: 1
+}
+
+var animationLeft = [
+  { transform: 'translateX(-20%)' },
+  { transform: 'translateY(0)' } 
+];
 
     function scrollL() {
         var scrollLength = wrapper.clientWidth + 16;
         wrapper.scrollLeft -= scrollLength;
+        wrapper.animate(animationLeft, animationTiming)
     }
     
     function scrollRight() {
         var scrollLength = wrapper.clientWidth + 16;
         wrapper.scrollLeft += scrollLength;
+        wrapper.animate(animation, animationTiming)
     }
 
-//Navngiv Billede
-var billeder = document.querySelectorAll('.img');
-for (var i = 0; i < billeder.length; i++) {
-  billeder[i].addEventListener("click", navngivBillede);
-}
+console.log("Slider JS loaded")

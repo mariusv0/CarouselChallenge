@@ -11,3 +11,5 @@ window.addEventListener("resize", function(e) {
         wrapper.scrollLeft = 0;
     }, 500);
 });
+
+console.log("Resizing JS loaded")
