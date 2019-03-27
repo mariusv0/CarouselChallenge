@@ -6,32 +6,74 @@ right.addEventListener("click", scrollRight)
 left.addEventListener("click", scrollL)
 
 var wrapper = document.querySelector('.wrapper');
-
+var list = document.getElementById("list");
 var animation = [
-  { transform: 'translateX(20%)' },
-  { transform: 'translateY(0)' } 
+  { transform: 'translateX(' + (wrapper.clientWidth + 16) + 'px)' }, 
 ];
 
 var animationTiming = {
   duration: 250,
-  iterations: 1
+  fill: "forwards"
 }
 
-var animationLeft = [
-  { transform: 'translateX(-20%)' },
-  { transform: 'translateY(0)' } 
-];
+    var oldPosition = 0;
 
     function scrollL() {
-        var scrollLength = wrapper.clientWidth + 16;
-        wrapper.scrollLeft -= scrollLength;
-        wrapper.animate(animationLeft, animationTiming)
+        var scrollLength = oldPosition + (wrapper.clientWidth + 16);
+
+        console.log('%i -> %i', oldPosition, scrollLength);
+
+        var left = list.animate({
+          transform: [
+            'translateX(' + (oldPosition) + 'px)',
+            'translateX(' + (scrollLength) + 'px)'
+          ]}, animationTiming);
+
+          left.onfinish = function() {
+            oldPosition = scrollLength;
+          };
     }
     
     function scrollRight() {
-        var scrollLength = wrapper.clientWidth + 16;
-        wrapper.scrollLeft += scrollLength;
-        wrapper.animate(animation, animationTiming)
+        var scrollLength = oldPosition - (wrapper.clientWidth + 16);
+
+        console.log('%i -> %i', oldPosition, scrollLength);
+
+        var right = list.animate({
+          transform: [
+            'translateX(' + (oldPosition) + 'px)',
+            'translateX(' + (scrollLength) + 'px)'
+          ]}, animationTiming);
+
+          right.onfinish = function() {
+            oldPosition = scrollLength;
+          }
     }
 
 console.log("Slider JS loaded")
+
+var resizeTimeout;
+var list = document.getElementById("list");
+
+window.addEventListener("resize", function(e) {
+    if (resizeTimeout !== null) {
+        clearTimeout(resizeTimeout);
+    }
+
+    resizeTimeout = setTimeout(function() {
+        resizeTimeout = null;
+        console.log(e);
+        oldPosition = 0;
+        
+        // wrapper.scrollLeft = 0;
+        list.animate({
+            transform: [
+              'translateX(' + 0 + 'px)',
+              'translateX(' + 0 + 'px)'
+            ]}, animationTiming);
+        console.log('%O', document.getElementById('list'));
+    }, 500);
+
+});
+
+console.log("Resizing JS loaded")

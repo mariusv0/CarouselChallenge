@@ -32,6 +32,11 @@ h4 {
 ul {
 	margin: 0;
 	padding: 0;
+	display: flex;
+	flex-direction: row;
+}
+
+.carousel {
 	padding-top: 50px;
 	display: flex;
 	flex-direction: row;
@@ -46,7 +51,7 @@ ul {
 	overflow: hidden;
 }
 
-ul .button {
+.button {
 	width: 24px;
 	height: 100%;
 	/* display: flex;
@@ -79,7 +84,7 @@ ul .button {
 	height: 20px;
 }
 
-ul div#right::after {
+div#right::after {
 	content: "";
 	display: block;
 	width: 15px;
@@ -91,7 +96,7 @@ ul div#right::after {
 	margin: 4px;
 }
 
-ul div#left::after {
+div#left::after {
 	content: "";
 	display: block;
 	width: 15px;
