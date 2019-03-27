@@ -1,4 +1,7 @@
 var billeder = document.querySelectorAll(".img");
+var billedeList = document.querySelector("ul");
+var nodes = document.querySelectorAll("li");
+
 for (var i = 0; i < billeder.length; i++) {
   billeder[i].addEventListener("click", navngivBillede);
 }
@@ -64,6 +67,8 @@ function addImg() {
 
 console.log("Tilføjbillede JS loaded");
 
+/*---------------Skal fixes---------------------------- */
+/*---------------Skal fixes---------------------------- */
 var deleteBtn = document.querySelectorAll(".deleteBtn");
 for (var i = 0; i < deleteBtn.length; i++) {
   deleteBtn[i].addEventListener("click", deleteImage);
@@ -71,12 +76,10 @@ for (var i = 0; i < deleteBtn.length; i++) {
 
 function deleteImage() {
   console.log("Fjern knap trykket");
-  // var billedeList = document.querySelectorAll('.img').length;
-  // var billedeFjern = billedeList[i];
-  var billedeParent = document.getElementById("wrapper");
-  var billedeFjern = document.querySelectorAll("li");
-  billedeParent.removeChild(billedeFjern[0]);
-  console.log(billedeFjern);
+  console.log(nodes);
+  nodes[i].parentNode.removeChild(nodes[i]);
 }
 
 console.log("Fjernbillede JS loaded");
+/*---------------Skal fixes---------------------------- */
+/*---------------Skal fixes---------------------------- */

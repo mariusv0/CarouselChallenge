@@ -1,77 +1,84 @@
+var right = document.getElementById("right");
+var left = document.getElementById("left");
 
-var right = document.getElementById("right")
-var left = document.getElementById("left")
+right.addEventListener("click", scrollRight);
+left.addEventListener("click", scrollL);
 
-right.addEventListener("click", scrollRight)
-left.addEventListener("click", scrollL)
-
-var wrapper = document.querySelector('.wrapper');
+var wrapper = document.querySelector(".wrapper");
 var list = document.getElementById("list");
 var animation = [
-  { transform: 'translateX(' + (wrapper.clientWidth + 16) + 'px)' }, 
+  { transform: "translateX(" + (wrapper.clientWidth + 16) + "px)" }
 ];
 
 var animationTiming = {
   duration: 250,
   fill: "forwards"
+};
+
+var oldPosition = 0;
+
+function scrollL() {
+  var scrollLength = oldPosition + (wrapper.clientWidth + 16);
+
+  console.log("%i -> %i", oldPosition, scrollLength);
+
+  var left = list.animate(
+    {
+      transform: [
+        "translateX(" + oldPosition + "px)",
+        "translateX(" + scrollLength + "px)"
+      ]
+    },
+    animationTiming
+  );
+
+  left.onfinish = function() {
+    oldPosition = scrollLength;
+  };
 }
 
-    var oldPosition = 0;
+function scrollRight() {
+  var scrollLength = oldPosition - (wrapper.clientWidth + 16);
 
-    function scrollL() {
-        var scrollLength = oldPosition + (wrapper.clientWidth + 16);
+  console.log("%i -> %i", oldPosition, scrollLength);
 
-        console.log('%i -> %i', oldPosition, scrollLength);
+  var right = list.animate(
+    {
+      transform: [
+        "translateX(" + oldPosition + "px)",
+        "translateX(" + scrollLength + "px)"
+      ]
+    },
+    animationTiming
+  );
 
-        var left = list.animate({
-          transform: [
-            'translateX(' + (oldPosition) + 'px)',
-            'translateX(' + (scrollLength) + 'px)'
-          ]}, animationTiming);
+  right.onfinish = function() {
+    oldPosition = scrollLength;
+  };
+}
 
-          left.onfinish = function() {
-            oldPosition = scrollLength;
-          };
-    }
-    
-    function scrollRight() {
-        var scrollLength = oldPosition - (wrapper.clientWidth + 16);
-
-        console.log('%i -> %i', oldPosition, scrollLength);
-
-        var right = list.animate({
-          transform: [
-            'translateX(' + (oldPosition) + 'px)',
-            'translateX(' + (scrollLength) + 'px)'
-          ]}, animationTiming);
-
-          right.onfinish = function() {
-            oldPosition = scrollLength;
-          }
-    }
-
-console.log("Slider JS loaded")
+console.log("Slider JS loaded");
 
 var resizeTimeout;
 var list = document.getElementById("list");
 
 window.addEventListener("resize", function(e) {
-    if (resizeTimeout !== null) {
-        clearTimeout(resizeTimeout);
-    }
+  if (resizeTimeout !== null) {
+    clearTimeout(resizeTimeout);
+  }
 
-    resizeTimeout = setTimeout(function() {
-        resizeTimeout = null;
-        oldPosition = 0;
-        
-        // wrapper.scrollLeft = 0;
-        list.animate({
-            transform: [
-              'translateX(' + 0 + 'px)',
-              'translateX(' + 0 + 'px)'
-            ]}, animationTiming);
-    }, 100);
+  resizeTimeout = setTimeout(function() {
+    resizeTimeout = null;
+    oldPosition = 0;
 
+    // wrapper.scrollLeft = 0;
+    list.animate(
+      {
+        transform: ["translateX(" + 0 + "px)", "translateX(" + 0 + "px)"]
+      },
+      animationTiming
+    );
+  }, 100);
 });
 
-console.log("Resizing JS loaded")
+console.log("Resizing JS loaded");
