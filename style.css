@@ -66,7 +66,12 @@ ul .button {
 	display:block;
 }
 
-
+.deleteBtn {
+	font-size: 20px;
+	color: red;
+	border: 1px solid red;
+	width: 100%;
+}
 
 ul div#right::after {
 	content: "";
