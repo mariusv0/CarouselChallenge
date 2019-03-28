@@ -23,21 +23,34 @@ console.log("Navngivning JS loaded");
 
 var addImgBtn = document.getElementById("addImgBtn");
 addImgBtn.addEventListener("click", addImg);
+var inputFields = document.querySelector(".inputfields");
+var inputSubmit = document.getElementById("imgSubmit")
 
 function addImg() {
-  var imgUrl = prompt("Skriv linket til billedet:", "");
-  if (!imgUrl) {
-    alert("Du skrev ikke en URL ind");
-    console.log("Du skrev ikke en URL ind");
-    return;
+
+  if (inputFields.style.display == "none"){
+    inputFields.style.display = "block";
+  } else {
+    inputFields.style.display = "none";
   }
+  // var imgUrl = prompt("Skriv linket til billedet:", "");
+  // if (!imgUrl) {
+  //   alert("Du skrev ikke en URL ind");
+  //   console.log("Du skrev ikke en URL ind");
+  //   return;
+  // }
+  inputSubmit.addEventListener("click", function (){
+  var imgUrl = document.getElementById("imgUrl").value;
+
 
   var imgNode = document.createElement("img");
   imgNode.setAttribute("src", "");
   imgNode.dataset.src = imgUrl;
   imgNode.classList.add("img", "lazy");
 
-  var imgName = prompt("Hvad skal billedet hedde?:", "");
+  var imgName = document.getElementById("imgName").value;
+
+  // var imgName = prompt("Hvad skal billedet hedde?:", "");
   if (!imgName) {
     var nameNode = document.createElement("h3");
     var newNumber = document.querySelectorAll(".img").length + 1;
@@ -71,7 +84,14 @@ function addImg() {
   imgNode.addEventListener("click", navngivBillede);
   console.log("Billede tilføjet med navn:", countText)
 
+  document.getElementById("imgUrl").value = "";
+  document.getElementById("imgName").value = "";
+
   lazyLoading(document.querySelector(".wrapper"));
+  }
+  )
+  
+  
 }
 
 console.log("Tilføjbillede JS loaded");
@@ -86,34 +106,3 @@ function deleteImage(e) {
 }
 
 console.log("Fjernbillede JS loaded");
-
-
-// /**LAZY LOADING */
-// function lazyLoading(view){
-//   var lazyBackgrounds = [].slice.call(view.querySelectorAll(".lazy"));
-
-// if ("IntersectionObserver" in window) {
-//   var lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
-//     entries.forEach(function(entry) {
-//       if (entry.isIntersecting) {
-//           var lazyImg = entry.target;
-//           lazyImg.src = lazyImg.dataset.src;
-//           lazyImg.classList.remove("lazy");
-//         lazyBackgroundObserver.unobserve(lazyImg);
-//       }
-//     });
-//   });
-
-//   lazyBackgrounds.forEach(function(lazyBackground) {
-//     lazyBackgroundObserver.observe(lazyBackground);
-//   });
-// } else {
-//     console.warn("IntersectionObserver not supported")
-// }
-// }
-
-// module.exports = lazyLoading;
-
-// lazyLoading(document);
-
-// console.log("Lazyload JS loaded")

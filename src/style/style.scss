@@ -82,6 +82,8 @@ html, body {
 		color: red;
 		width: 100%;
 		cursor: pointer;
+		border-bottom: 1px solid red;
+		border-radius: 15px;
 	}
 
 	.spacer {
@@ -132,6 +134,32 @@ html, body {
 		padding-right: 0;
 	}
 
+	.inputfields {
+		text-align: center;
+		padding-top: 15px;
+		display: flex;
+	}
+
+	input[type=text] {
+		text-align: center;
+		height: 25px;
+		width: 300px;
+		border-radius: 15px;
+	}
+
+	.inputfields #imgSubmit {
+		text-align: center;
+		border: 2px solid darkgray;
+		background-color: #f5f5f5;
+		color: black;
+		width: 100px;
+		height: 35px;
+		border-radius: 15px;
+		margin:auto;
+		display:block;
+		cursor: pointer;
+		margin-top: 15px;
+	}
 
 }
 

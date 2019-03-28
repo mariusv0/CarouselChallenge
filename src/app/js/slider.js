@@ -11,8 +11,9 @@ var animation = [
 ];
 
 var animationTiming = {
-  duration: 250,
-  fill: "forwards"
+  duration: 350,
+  fill: "forwards",
+  easing: "ease-in-out"
 };
 
 var oldPosition = 0;
@@ -37,6 +38,8 @@ function scrollL() {
   };
 }
 
+
+
 function scrollRight() {
   var scrollLength = oldPosition - (wrapper.clientWidth + 16);
 
@@ -55,6 +58,8 @@ function scrollRight() {
   right.onfinish = function() {
     oldPosition = scrollLength;
   };
+
+  
 }
 
 console.log("Slider JS loaded");
