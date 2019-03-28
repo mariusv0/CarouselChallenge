@@ -1,5 +1,3 @@
-lazyLoading(document)
-
 function lazyLoading(view){
     var lazyBackgrounds = [].slice.call(view.querySelectorAll(".lazy"));
 
@@ -23,4 +21,6 @@ function lazyLoading(view){
   }
 }
 
-console.log("Lazyload JS loaded")
+lazyLoading(document);
+
+// console.log("Lazyload JS loaded")

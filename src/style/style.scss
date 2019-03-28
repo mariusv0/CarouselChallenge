@@ -128,11 +128,13 @@ html, body {
 	}
 
 
-	@media (min-width: 700px) {
-		#app {
-			width: 100%;
-			max-width: 980px;
-		}
+}
+
+@media (min-width: 700px) {
+	#app {
+		width: 100%;
+		max-width: 980px;
+	
 
 		li {
 			/* width: 100%; */
@@ -150,5 +152,4 @@ html, body {
 			height: 300px;
 		}
 	}
-
 }
