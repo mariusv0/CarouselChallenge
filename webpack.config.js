@@ -4,7 +4,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-    entry: path.resolve(__dirname, '/src/app/index.js'), // webpack entry point. Module to start building dependency graph
+    mode: 'development',
+
+    entry: path.resolve(__dirname, './src/app/index.js'), // webpack entry point. Module to start building dependency graph
 
     output: {
         path: path.resolve(__dirname, 'dist'), // folder to store bundle
