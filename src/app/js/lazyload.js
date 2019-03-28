@@ -1,4 +1,4 @@
-function lazyLoading(view){
+export default function lazyLoading(view){
     var lazyBackgrounds = [].slice.call(view.querySelectorAll(".lazy"));
 
   if ("IntersectionObserver" in window) {
@@ -21,6 +21,4 @@ function lazyLoading(view){
   }
 }
 
-lazyLoading(document);
-
-// console.log("Lazyload JS loaded")
+console.log("Lazyload JS loaded")

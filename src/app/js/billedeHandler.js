@@ -1,5 +1,6 @@
-var billeder = document.querySelectorAll(".img");
+import lazyLoading from './lazyload';
 
+var billeder = document.querySelectorAll(".img");
 
 for (var i = 0; i < billeder.length; i++) {
   billeder[i].addEventListener("click", navngivBillede);
@@ -85,3 +86,34 @@ function deleteImage(e) {
 }
 
 console.log("Fjernbillede JS loaded");
+
+
+// /**LAZY LOADING */
+// function lazyLoading(view){
+//   var lazyBackgrounds = [].slice.call(view.querySelectorAll(".lazy"));
+
+// if ("IntersectionObserver" in window) {
+//   var lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
+//     entries.forEach(function(entry) {
+//       if (entry.isIntersecting) {
+//           var lazyImg = entry.target;
+//           lazyImg.src = lazyImg.dataset.src;
+//           lazyImg.classList.remove("lazy");
+//         lazyBackgroundObserver.unobserve(lazyImg);
+//       }
+//     });
+//   });
+
+//   lazyBackgrounds.forEach(function(lazyBackground) {
+//     lazyBackgroundObserver.observe(lazyBackground);
+//   });
+// } else {
+//     console.warn("IntersectionObserver not supported")
+// }
+// }
+
+// module.exports = lazyLoading;
+
+// lazyLoading(document);
+
+// console.log("Lazyload JS loaded")
