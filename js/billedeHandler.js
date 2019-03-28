@@ -1,6 +1,5 @@
 var billeder = document.querySelectorAll(".img");
-var billedeList = document.querySelector("ul");
-var nodes = document.querySelectorAll("li");
+
 
 for (var i = 0; i < billeder.length; i++) {
   billeder[i].addEventListener("click", navngivBillede);
@@ -54,32 +53,35 @@ function addImg() {
   var subText = document.createTextNode("Klik på billedet for at ændre navnet");
   subNode.appendChild(subText);
 
+  var subBtnText = document.createTextNode("Fjern");
+  var subBtn = document.createElement("div");
+  subBtn.classList.add("deleteBtn");
+  subBtn.appendChild(subBtnText);
+  subBtn.addEventListener("click", deleteImage);
+
+
   var liNode = document.createElement("li");
 
   liNode.appendChild(imgNode);
   liNode.appendChild(nameNode);
   liNode.appendChild(subNode);
+  liNode.appendChild(subBtn);
   document.getElementById("list").appendChild(liNode);
   imgNode.addEventListener("click", navngivBillede);
+  console.log("Billede tilføjet med navn:", countText)
 
   lazyLoading(document.querySelector(".wrapper"));
 }
 
 console.log("Tilføjbillede JS loaded");
 
-/*---------------Skal fixes---------------------------- */
-/*---------------Skal fixes---------------------------- */
 var deleteBtn = document.querySelectorAll(".deleteBtn");
 for (var i = 0; i < deleteBtn.length; i++) {
   deleteBtn[i].addEventListener("click", deleteImage);
 }
 
-function deleteImage() {
-  console.log("Fjern knap trykket");
-  console.log(nodes);
-  nodes[i].parentNode.removeChild(nodes[i]);
+function deleteImage(e) {
+  e.target.parentNode.parentNode.removeChild(e.target.parentNode);
 }
 
 console.log("Fjernbillede JS loaded");
-/*---------------Skal fixes---------------------------- */
-/*---------------Skal fixes---------------------------- */
