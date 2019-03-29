@@ -6,6 +6,26 @@ left.addEventListener("click", scrollL);
 
 var wrapper = document.querySelector(".wrapper");
 var list = document.getElementById("list");
+
+if (document.documentMode || /Edge/.test(navigator.userAgent)) {
+  var right = document.getElementById("right");
+var left = document.getElementById("left");
+
+right.addEventListener("click", scrollRight);
+left.addEventListener("click", scrollL);
+
+var wrapper = document.querySelector(".wrapper");
+var list = document.getElementById("list");
+  function scrollL() {
+    var scrollLength = wrapper.clientWidth + 16;
+    wrapper.scrollLeft -= scrollLength;
+}
+
+function scrollRight() {
+    var scrollLength = wrapper.clientWidth + 16;
+    wrapper.scrollLeft += scrollLength;
+}
+}
 var animation = [
   { transform: "translateX(" + (wrapper.clientWidth + 16) + "px)" }
 ];
@@ -62,10 +82,27 @@ function scrollRight() {
   
 }
 
+
 console.log("Slider JS loaded");
 
 var resizeTimeout;
 var list = document.getElementById("list");
+
+if (document.documentMode || /Edge/.test(navigator.userAgent)) {
+  var resizeTimeout;
+  
+  window.addEventListener("resize", function(e) {
+      if (resizeTimeout !== null) {
+          clearTimeout(resizeTimeout);
+      }
+  
+      resizeTimeout = setTimeout(function() {
+          resizeTimeout = null;
+          console.log(e);
+          wrapper.scrollLeft = 0;
+      }, 500);
+  });
+}
 
 window.addEventListener("resize", function(e) {
   if (resizeTimeout !== null) {

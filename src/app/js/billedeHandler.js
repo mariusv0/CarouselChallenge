@@ -41,6 +41,9 @@ function addImg() {
   // }
   inputSubmit.addEventListener("click", function (){
   var imgUrl = document.getElementById("imgUrl").value;
+  if (!imgUrl) {
+    imgUrl = "https://media.licdn.com/dms/image/C510BAQEVyP3a3AfYYQ/company-logo_200_200/0?e=2159024400&v=beta&t=IJsT9TJ-Npycia49sVzcmPskhMovCCNZsxFZKz32RGU";
+  }
 
 
   var imgNode = document.createElement("img");
